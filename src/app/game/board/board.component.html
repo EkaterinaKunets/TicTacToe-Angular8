@@ -9,6 +9,6 @@
     <app-box [box]="box" *ngFor="let box of boxes" (click)="makeMove(box)"></app-box>
   </div>
   {{ !isWon }}
-  <button mat-raised-button color="primary" [disabled]="!isWon" (click)="newGame()">New Game</button>
+  <button mat-raised-button color="primary" (click)="newGame()">New Game</button>
   {{ isWon && step < 9 }}
 </div>
