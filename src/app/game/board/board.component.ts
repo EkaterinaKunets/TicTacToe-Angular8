@@ -72,6 +72,7 @@ export class BoardComponent implements OnInit {
       if (this.boxes[a].player === this.boxes[b].player && this.boxes[a].player === this.boxes[c].player && this.boxes[a].player !== Player.none) {
         this.winner = this.boxes[a].player;
         this.isWon = true;
+        this.step = 9;
       }
     }
   }

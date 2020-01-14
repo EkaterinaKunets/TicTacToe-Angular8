@@ -8,7 +8,5 @@
   <div class="board">
     <app-box [box]="box" *ngFor="let box of boxes" (click)="makeMove(box)"></app-box>
   </div>
-  {{ !isWon }}
-  <button mat-raised-button color="primary" (click)="newGame()">New Game</button>
-  {{ isWon && step < 9 }}
+  <button mat-raised-button color="primary" [disabled]="step < 9" (click)="newGame()">New Game</button>
 </div>
