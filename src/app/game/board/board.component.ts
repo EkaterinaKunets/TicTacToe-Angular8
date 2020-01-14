@@ -40,19 +40,21 @@ export class BoardComponent implements OnInit {
   }
 
   makeMove(box: Box) {
-    if (this.step < 9) {
-      if (!this.isWon) {
-        if (box.player === Player.none) {
-          box.player = this.player;
-          this.player = this.player === Player.X ? Player.O : Player.X;
-          this.step++;
-          console.log(this.step);
-          if (!this.isWon) {
-            this.calculateWinner();
-          }
+    if (!this.isWon) {
+      if (box.player === Player.none) {
+        box.player = this.player;
+        this.player = this.player === Player.X ? Player.O : Player.X;
+        this.step++;
+        console.log(this.step);
+        if (!this.isWon) {
+          this.calculateWinner();
         }
       }
     }
+  }
+
+  get isDraw() {
+    return this.step === 9;
   }
 
   calculateWinner() {
@@ -72,7 +74,6 @@ export class BoardComponent implements OnInit {
       if (this.boxes[a].player === this.boxes[b].player && this.boxes[a].player === this.boxes[c].player && this.boxes[a].player !== Player.none) {
         this.winner = this.boxes[a].player;
         this.isWon = true;
-        this.step = 9;
       }
     }
   }
