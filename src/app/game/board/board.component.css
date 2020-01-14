@@ -1,0 +1,57 @@
+.board {
+  display: grid;
+  grid-template-columns: repeat(3, 4rem);
+  grid-template-rows: repeat(3, 4rem);
+}
+
+button {
+  border-radius: 0;
+  margin-top: 0.5rem;
+  height: 3rem;
+}
+
+.X {
+  background-color: violet;
+}
+
+.O {
+  background-color: #fbadd4;
+}
+
+mat-toolbar {
+  display: flex;
+  place-content: center;
+  margin-bottom: 0.5rem;
+  height: 3rem;
+}
+
+.game {
+  margin-top: 2rem;
+  display: grid;
+  grid-template-columns: auto;
+  place-content: center;
+}
+
+@media (min-width: 340px) {
+  .board {
+    display: grid;
+    grid-template-columns: repeat(3, 6rem);
+    grid-template-rows: repeat(3, 6rem);
+  }
+}
+
+@media (min-width: 480px) {
+  .board {
+    display: grid;
+    grid-template-columns: repeat(3, 8rem);
+    grid-template-rows: repeat(3, 8rem);
+  }
+}
+
+@media (min-width: 1250px) {
+  .board {
+    display: grid;
+    grid-template-columns: repeat(3, 10rem);
+    grid-template-rows: repeat(3, 10rem);
+  }
+}

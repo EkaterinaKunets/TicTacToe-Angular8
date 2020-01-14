@@ -1,0 +1,14 @@
+<div class="game">
+  <mat-toolbar [ngClass]="winner" color="primary">
+    <span *ngIf="!isWon && step != 9"> Turn {{ player }} </span>
+    <span *ngIf="isWon">{{ winner }} won!</span>
+    <span *ngIf="step > 8"> Draw! </span>
+  </mat-toolbar>
+
+  <div class="board">
+    <app-box [box]="box" *ngFor="let box of boxes" (click)="makeMove(box)"></app-box>
+  </div>
+  {{ !isWon }}
+  <button mat-raised-button color="primary" [disabled]="!isWon" (click)="newGame()">New Game</button>
+  {{ isWon && step < 9 }}
+</div>
