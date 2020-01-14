@@ -1,6 +1,6 @@
 <div class="game">
   <mat-toolbar [ngClass]="winner" color="primary">
-    <span *ngIf="!isWon && step != 9"> Turn {{ player }} </span>
+    <span *ngIf="!isWon && !isDraw"> Turn {{ player }} </span>
     <span *ngIf="isWon">{{ winner }} won!</span>
     <span *ngIf="isDraw && !isWon"> Draw! </span>
   </mat-toolbar>
