@@ -5,7 +5,7 @@ import { Player } from '../player';
 @Component({
   selector: 'app-board',
   templateUrl: './board.component.html',
-  styleUrls: ['./board.component.css']
+  styleUrls: ['./board.component.css'],
 })
 
 export class BoardComponent implements OnInit {
@@ -45,7 +45,6 @@ export class BoardComponent implements OnInit {
         box.player = this.player;
         this.player = this.player === Player.X ? Player.O : Player.X;
         this.step++;
-        console.log(this.step);
         if (!this.isWon) {
           this.calculateWinner();
         }
